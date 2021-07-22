@@ -6,9 +6,7 @@ initializeIcons();
 
 function App() {
   return (
-    <div className="App">
-      <HeaderNavigation/>
-    </div>
+    <HeaderNavigation/>
   );
 }
 

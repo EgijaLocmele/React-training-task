@@ -1,6 +1,5 @@
 import './HeaderNavigation.scss';
 import logo from '../../assets/logo.svg';
-import { NeutralColors } from '@fluentui/theme';
 import { IconButton } from '@fluentui/react/lib/Button';
 
 export function HeaderNavigation() {
@@ -8,11 +7,11 @@ export function HeaderNavigation() {
   const hamburgerButton={iconName: 'GlobalNavButton'};
   
   return (
-    <header className="navigation" style={{ background: NeutralColors.gray60 }}>
-      <img className="navigation__logo" src={logo} alt="logo"></img>
+    <header className="navigation">
+      <img className="navigation__logo" src={logo} alt="logo"/>
       <div className="navigation__buttons">
-        <IconButton iconProps={shoppingCart} className="navigation__buttons-style"/>
-        <IconButton iconProps={hamburgerButton} className="navigation__buttons-style"/>
+        <IconButton iconProps={shoppingCart} className="navigation__icon"/>
+        <IconButton iconProps={hamburgerButton} className="navigation__icon"/>
       </div>
     </header>
   )
