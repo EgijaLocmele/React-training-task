@@ -1,6 +1,6 @@
-import './HeaderNavigation.scss';
-import logo from '../../assets/logo.svg';
 import { IconButton } from '@fluentui/react/lib/Button';
+import logo from '../../assets/logo.svg';
+import './HeaderNavigation.scss';
 
 export function HeaderNavigation() {
   const shoppingCart={iconName: 'ShoppingCart'};
