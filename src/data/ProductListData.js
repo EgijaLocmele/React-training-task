@@ -4,7 +4,7 @@ import bookImage3 from "../assets/book_image3.png";
 import bookImage4 from "../assets/book_image4.png";
 import bookImage5 from "../assets/book_image5.png";
 
-export const productList = 
+const productList = 
   [
     {
       "id": "1",
