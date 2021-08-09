@@ -2,11 +2,11 @@
 
 .navigation {
   height: 50px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  background-color: $ms-color-gray60;;
+  background-color: $ms-color-gray60;
 
   &__logo {
     height: 35px;

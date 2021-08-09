@@ -1,12 +1,16 @@
 import React from 'react';
-import { HeaderNavigation } from './features/header/HeaderNavigation';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
+import { HeaderNavigation } from './features/header/HeaderNavigation';
+import { ProductList } from './features/productList/ProductList';
 
 initializeIcons();
 
 function App() {
   return (
-    <HeaderNavigation/>
+    <div>
+      <HeaderNavigation/>
+      <ProductList />
+    </div>
   );
 }
 
