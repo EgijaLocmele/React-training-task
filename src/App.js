@@ -1,16 +1,17 @@
 import React from 'react'
 import { initializeIcons } from '@fluentui/react/lib/Icons'
 import { HeaderNavigation } from './features/header/HeaderNavigation'
-import { ProductListItem } from './features/productList/ProductListItem'
+import { ProductList } from './features/productList/ProductList'
+import data from './data/data.json'
 
 initializeIcons()
 
 function App () {
   return (
-    <div>
+    <>
       <HeaderNavigation/>
-      <ProductListItem />
-    </div>
+      <ProductList productListData={data.productListItems}/>
+    </>
   )
 }
 

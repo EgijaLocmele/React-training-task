@@ -6,23 +6,21 @@ import {
 } from '@fluentui/react/lib/DocumentCard'
 import { Text } from '@fluentui/react/lib/Text'
 import { ImageFit } from '@fluentui/react/lib/Image'
-import ProductList from '../../data/ProductListData'
-import './ProductList.scss'
 
-export function ProductListItem () {
+export function ProductListItem ({ path, imageAlt, title, price }) {
+  function truncateText() {
+    if (title.length > 50) {
+      return `${title.substring(0, 50)}...`;
+    }
+    return title;
+  }
   return (
-    <div className="product-list">
-      {ProductList.map((item, i) => (
-      <DocumentCard className="product-list-items" key={i}>
-        <DocumentCardImage imageFit={ImageFit.cover} imageSrc={item.path} className="product-list__image" alt={item.imageAlt}/>
+      <DocumentCard className="product-list-items" >
+        <DocumentCardImage imageFit={ImageFit.cover} imageSrc={require(`../../assets/${path}`).default} className="product-list__image" alt={imageAlt}/>
         <div className="product-list__text" >
-          <DocumentCardTitle
-            title={item.title.length > 50 ? `${item.title.substring(0, 50)}...` : item.title}
-            shouldTruncate className="product-list__title" />
-          <Text className="product-list__price">{item.price}</Text>
+          <DocumentCardTitle title={truncateText()} shouldTruncate className="product-list__title" />
+          <Text className="product-list__price">{price}</Text>
         </div>
       </DocumentCard>
-      ))}
-    </div>
   )
 }
