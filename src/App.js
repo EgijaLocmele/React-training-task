@@ -1,13 +1,18 @@
-import React from 'react';
-import { HeaderNavigation } from './features/header/HeaderNavigation';
-import { initializeIcons } from '@fluentui/react/lib/Icons';
+import React from 'react'
+import { initializeIcons } from '@fluentui/react/lib/Icons'
+import { HeaderNavigation } from './features/header/HeaderNavigation'
+import { ProductList } from './features/productList/ProductList'
+import data from './data/data.json'
 
-initializeIcons();
+initializeIcons()
 
-function App() {
+function App () {
   return (
-    <HeaderNavigation/>
-  );
+    <>
+      <HeaderNavigation/>
+      <ProductList productListData={data.productListItems}/>
+    </>
+  )
 }
 
-export default App;
+export default App
