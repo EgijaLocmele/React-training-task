@@ -1,0 +1,52 @@
+@import '@fluentui/react/dist/sass/References';
+
+.product-details {
+  position: relative;
+  top: 50px;
+  margin: 25px 15px 15px;
+  width: auto;
+  padding-bottom: 50px;
+
+  &__title {
+    text-align: center;
+  }
+  
+  &__image {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  &__description {
+    text-indent: 25px;
+    padding-bottom: 25px;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    &__amount {
+      width: 86px;
+    }
+
+    &__price {
+      margin-right: 30px;
+    }
+  }
+
+  &__button {
+    background-color: $ms-color-gray60;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 5px 0;
+    height: 45px;
+    border: none;
+    color: $ms-color-black;
+
+    &:hover {
+      background-color: $ms-color-gray60;
+      color: $ms-color-black;
+    }
+  }
+}
