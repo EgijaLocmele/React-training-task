@@ -9,13 +9,6 @@
   background-color: $ms-color-gray60;
   top: 0;
 
-  &__logo {
-    height: 35px;
-    width: 100px;
-    padding: 8px 0 0 10px;
-    cursor: pointer;
-  }
-
   &__buttons {
     padding-right: 10px;
   }
@@ -31,5 +24,10 @@
       background-color: initial;
       color: $ms-color-black;
     }
+  }
+
+  &__link {
+    margin: 4px 0 0 10px;
+    cursor: pointer;
   }
 }

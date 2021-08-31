@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Image, ImageFit } from '@fluentui/react/lib/Image'
 import { IconButton } from '@fluentui/react/lib/Button'
 import logo from '../../assets/logo.svg'
 import './HeaderNavigation.scss'
@@ -9,7 +11,10 @@ export function HeaderNavigation() {
 
   return (
     <header className="navigation">
-      <img className="navigation__logo" src={logo} alt="logo" />
+      <Link to={`/`} className="navigation__link">
+        <Image src={logo} alt="logo" imageFit={ImageFit.contain} />
+        <img />
+      </Link>
       <div className="navigation__buttons">
         <IconButton iconProps={shoppingCart} className="navigation__icon" />
         <IconButton iconProps={hamburgerButton} className="navigation__icon" />
