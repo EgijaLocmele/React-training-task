@@ -4,26 +4,20 @@ import { SpinButton, Position } from '@fluentui/react'
 import { PrimaryButton } from '@fluentui/react/lib/Button'
 import './ProductDetails.scss'
 
-export function ProductDetailsItem({
-  title,
-  path,
-  imageAlt,
-  description,
-  price
-}) {
+export function ProductDetailsItem({ productDetailsData }) {
   return (
     <div className="product-details">
       <Text className="product-details__title" variant="large">
-        {title}
+        {productDetailsData.title}
       </Text>
       <Image
         imageFit={ImageFit.cover}
         className="product-details__image"
-        src={require(`../../assets/${path}`).default}
-        alt={imageAlt}
+        src={require(`../../assets/${productDetailsData.path}`).default}
+        alt={productDetailsData.imageAlt}
       />
       <Text className="product-details__description" block>
-        {description}
+        {productDetailsData.description}
       </Text>
       <div className="product-details__container">
         <SpinButton
@@ -38,7 +32,7 @@ export function ProductDetailsItem({
           decrementButtonAriaLabel="Decrease value by 1"
         />
         <Text className="product-details__container__price" variant="large">
-          {price}
+          {productDetailsData.price}
         </Text>
       </div>
       <PrimaryButton className="product-details__button" text="Add to cart" />

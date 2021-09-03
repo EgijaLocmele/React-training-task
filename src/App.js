@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { initializeIcons } from '@fluentui/react/lib/Icons'
 import { HeaderNavigation } from './features/header/HeaderNavigation'
 import { ProductList } from './features/productList/ProductList'
@@ -9,12 +10,17 @@ initializeIcons()
 
 function App() {
   return (
-    <>
-      <h1>hi</h1>
+    <BrowserRouter>
       <HeaderNavigation />
-      <ProductList productListData={data.productListItems} />
-      <ProductDetails productDetailsData={data.productListItems} />
-    </>
+      <Switch>
+        <Route exact path="/">
+          <ProductList productListData={data.productListItems} />
+        </Route>
+        <Route path="/products/:itemId">
+          <ProductDetails productDetailsData={data.productListItems} />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   )
 }
 
