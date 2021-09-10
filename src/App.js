@@ -2,9 +2,9 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { initializeIcons } from '@fluentui/react/lib/Icons'
 import { useSelector } from 'react-redux'
-import { HeaderNavigation } from './features/header/HeaderNavigation'
-import ProductList from './features/productList/ProductList'
-import ProductDetails from './features/productDetails/ProductDetails'
+import { HeaderNavigation } from './features/Header/HeaderNavigation'
+import ProductList from './features/ProductList/ProductList'
+import ProductDetails from './features/ProductDetails/ProductDetails'
 
 initializeIcons()
 
