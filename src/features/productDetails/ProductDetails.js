@@ -4,7 +4,7 @@ import ProductDetailsItem from './ProductDetailsItem'
 
 const ProductDetails = (props) => {
   const { products } = props
-  let { itemId } = useParams()
+  const { itemId } = useParams()
   const selectBook = products?.find((book) => book.id === itemId)
 
   return <ProductDetailsItem products={selectBook} />
