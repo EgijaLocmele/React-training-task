@@ -1,9 +1,15 @@
 import { useParams } from 'react-router-dom'
-import { ProductDetailsItem } from './ProductDetailsItem'
+import PropTypes from 'prop-types'
+import ProductDetailsItem from './ProductDetailsItem'
 
-export function ProductDetails({ productDetailsData }) {
+const ProductDetails = (props) => {
+  const { products } = props
   let { itemId } = useParams()
-  const selectBook = productDetailsData?.find((book) => book.id === itemId)
+  const selectBook = products?.find((book) => book.id === itemId)
 
-  return <ProductDetailsItem productDetailsData={selectBook} />
+  return <ProductDetailsItem products={selectBook} />
 }
+ProductDetails.propTypes = {
+  products: PropTypes.array
+}
+export default ProductDetails
