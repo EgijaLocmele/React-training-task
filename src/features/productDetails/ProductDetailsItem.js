@@ -6,20 +6,20 @@ import PropTypes from 'prop-types'
 import './ProductDetails.scss'
 
 const ProductDetailsItem = (props) => {
-  const { products } = props
+  const { product } = props
   return (
     <div className="product-details">
       <Text className="product-details__title" variant="large">
-        {products.title}
+        {product.title}
       </Text>
       <Image
         imageFit={ImageFit.cover}
         className="product-details__image"
-        src={require(`../../assets/${products.path}`).default}
-        alt={products.imageAlt}
+        src={require(`../../assets/${product.path}`).default}
+        alt={product.imageAlt}
       />
       <Text className="product-details__description" block>
-        {products.description}
+        {product.description}
       </Text>
       <div className="product-details__container">
         <SpinButton
@@ -34,7 +34,7 @@ const ProductDetailsItem = (props) => {
           decrementButtonAriaLabel="Decrease value by 1"
         />
         <Text className="product-details__container__price" variant="large">
-          {products.price}
+          {product.price}
         </Text>
       </div>
       <PrimaryButton className="product-details__button" text="Add to cart" />
@@ -42,7 +42,7 @@ const ProductDetailsItem = (props) => {
   )
 }
 ProductDetailsItem.propTypes = {
-  products: PropTypes.object
+  product: PropTypes.object
 }
 
 export default ProductDetailsItem

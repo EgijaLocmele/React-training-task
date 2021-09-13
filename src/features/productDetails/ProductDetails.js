@@ -5,7 +5,7 @@ const ProductDetails = ({ products }) => {
   const { itemId } = useParams()
   const selectBook = products?.find((book) => book.id === itemId)
 
-  return <ProductDetailsItem products={selectBook} />
+  return <ProductDetailsItem product={selectBook} />
 }
 
 export default ProductDetails
