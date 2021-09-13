@@ -2,22 +2,24 @@ import { Text } from '@fluentui/react/lib/Text'
 import { Image, ImageFit } from '@fluentui/react/lib/Image'
 import { SpinButton, Position } from '@fluentui/react'
 import { PrimaryButton } from '@fluentui/react/lib/Button'
+import PropTypes from 'prop-types'
 import './ProductDetails.scss'
 
-export function ProductDetailsItem({ productDetailsData }) {
+const ProductDetailsItem = (props) => {
+  const { product } = props
   return (
     <div className="product-details">
       <Text className="product-details__title" variant="large">
-        {productDetailsData.title}
+        {product.title}
       </Text>
       <Image
         imageFit={ImageFit.cover}
         className="product-details__image"
-        src={require(`../../assets/${productDetailsData.path}`).default}
-        alt={productDetailsData.imageAlt}
+        src={require(`../../assets/${product.path}`).default}
+        alt={product.imageAlt}
       />
       <Text className="product-details__description" block>
-        {productDetailsData.description}
+        {product.description}
       </Text>
       <div className="product-details__container">
         <SpinButton
@@ -26,16 +28,20 @@ export function ProductDetailsItem({ productDetailsData }) {
           labelPosition={Position.top}
           defaultValue="1"
           min={1}
-          max={10}
           step={1}
           incrementButtonAriaLabel="Increase value by 1"
           decrementButtonAriaLabel="Decrease value by 1"
         />
         <Text className="product-details__container__price" variant="large">
-          {productDetailsData.price}
+          {product.price}
         </Text>
       </div>
       <PrimaryButton className="product-details__button" text="Add to cart" />
     </div>
   )
 }
+ProductDetailsItem.propTypes = {
+  product: PropTypes.object
+}
+
+export default ProductDetailsItem

@@ -1,23 +1,25 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { initializeIcons } from '@fluentui/react/lib/Icons'
-import { HeaderNavigation } from './features/header/HeaderNavigation'
-import { ProductList } from './features/productList/ProductList'
-import { ProductDetails } from './features/productDetails/ProductDetails'
-import data from './data/data.json'
+import { useSelector } from 'react-redux'
+import { HeaderNavigation } from './features/Header/HeaderNavigation'
+import ProductList from './features/ProductList/ProductList'
+import ProductDetails from './features/ProductDetails/ProductDetails'
 
 initializeIcons()
 
 function App() {
+  const products = useSelector((state) => state.productListItems)
+
   return (
     <BrowserRouter>
       <HeaderNavigation />
       <Switch>
         <Route exact path="/">
-          <ProductList productListData={data.productListItems} />
+          <ProductList products={products} />
         </Route>
         <Route path="/products/:itemId">
-          <ProductDetails productDetailsData={data.productListItems} />
+          <ProductDetails products={products} />
         </Route>
       </Switch>
     </BrowserRouter>

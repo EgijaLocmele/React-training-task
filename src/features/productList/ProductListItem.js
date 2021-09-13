@@ -6,21 +6,23 @@ import {
 } from '@fluentui/react/lib/DocumentCard'
 import { Text } from '@fluentui/react/lib/Text'
 import { ImageFit } from '@fluentui/react/lib/Image'
+import PropTypes from 'prop-types'
 
-export function ProductListItem({ path, imageAlt, title, price }) {
+const ProductListItem = (props) => {
+  const { item } = props
   function truncateText() {
-    if (title.length > 50) {
-      return `${title.substring(0, 50)}...`
+    if (item.title.length > 50) {
+      return `${item.title.substring(0, 50)}...`
     }
-    return title
+    return item.title
   }
   return (
     <DocumentCard className="product-list-items">
       <DocumentCardImage
         imageFit={ImageFit.cover}
-        imageSrc={require(`../../assets/${path}`).default}
+        imageSrc={require(`../../assets/${item.path}`).default}
         className="product-list__image"
-        alt={imageAlt}
+        alt={item.imageAlt}
       />
       <div className="product-list__text">
         <DocumentCardTitle
@@ -28,8 +30,13 @@ export function ProductListItem({ path, imageAlt, title, price }) {
           shouldTruncate
           className="product-list__title"
         />
-        <Text className="product-list__price">{price}</Text>
+        <Text className="product-list__price">{item.price}</Text>
       </div>
     </DocumentCard>
   )
 }
+ProductListItem.propTypes = {
+  product: PropTypes.object
+}
+
+export default ProductListItem
