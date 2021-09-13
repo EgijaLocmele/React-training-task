@@ -9,17 +9,17 @@ import ProductDetails from './features/ProductDetails/ProductDetails'
 initializeIcons()
 
 function App() {
-  const product = useSelector((state) => state.productListItems)
+  const products = useSelector((state) => state.productListItems)
 
   return (
     <BrowserRouter>
       <HeaderNavigation />
       <Switch>
         <Route exact path="/">
-          <ProductList products={product} />
+          <ProductList products={products} />
         </Route>
         <Route path="/products/:itemId">
-          <ProductDetails products={product} />
+          <ProductDetails products={products} />
         </Route>
       </Switch>
     </BrowserRouter>
