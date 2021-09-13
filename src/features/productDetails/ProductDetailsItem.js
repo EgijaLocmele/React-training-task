@@ -28,7 +28,6 @@ const ProductDetailsItem = (props) => {
           labelPosition={Position.top}
           defaultValue="1"
           min={1}
-          max={10}
           step={1}
           incrementButtonAriaLabel="Increase value by 1"
           decrementButtonAriaLabel="Decrease value by 1"
